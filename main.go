@@ -13,7 +13,17 @@ func main() {
 	sint = append(sint, 1, 2, 3)
 	sstr = append(sstr, "first", "second")
 
+	fmt.Println("Печать:")
 	genutils.Print(sint)
 	fmt.Println()
 	genutils.Print(sstr)
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("Реверс:")
+	genutils.Reverse(sint)
+	fmt.Println(sint)
+	fmt.Println()
+	genutils.Reverse(sstr)
+	fmt.Println(sstr)
+
 }
