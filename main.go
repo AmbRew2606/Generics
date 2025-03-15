@@ -19,11 +19,24 @@ func main() {
 	genutils.Print(sstr)
 	fmt.Println()
 	fmt.Println()
+	fmt.Println("Подсчет:")
+	fmt.Println(len(sint))
+	fmt.Println()
+	fmt.Println()
 	fmt.Println("Реверс:")
 	genutils.Reverse(sint)
 	fmt.Println(sint)
 	fmt.Println()
 	genutils.Reverse(sstr)
 	fmt.Println(sstr)
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("Максимальные значения:")
+	result, err := genutils.MaxValue(sint)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(result)
+	}
 
 }

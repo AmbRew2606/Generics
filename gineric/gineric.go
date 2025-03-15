@@ -17,3 +17,17 @@ func Reverse[T constraints.Ordered](s []T) {
 		s[i], s[j] = s[j], s[i]
 	}
 }
+
+func MaxValue[T constraints.Ordered](s []T) (T, error) {
+	if len(s) == 0 {
+		var zero T
+		return zero, fmt.Errorf("срез пуст")
+	}
+	max := s[0]
+	for _, v := range s {
+		if v > max {
+			max = v
+		}
+	}
+	return max, nil
+}
