@@ -31,3 +31,11 @@ func MaxValue[T constraints.Ordered](s []T) (T, error) {
 	}
 	return max, nil
 }
+
+func Map[T, U any](s []T, fn func(T) U) []U {
+	var result []U
+	for _, v := range s {
+		result = append(result, fn(v))
+	}
+	return result
+}

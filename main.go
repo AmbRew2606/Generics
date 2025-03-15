@@ -32,11 +32,28 @@ func main() {
 	fmt.Println()
 	fmt.Println()
 	fmt.Println("Максимальные значения:")
-	result, err := genutils.MaxValue(sint)
+
+	resultSintMax, err := genutils.MaxValue(sint)
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println(result)
+		fmt.Println(resultSintMax)
 	}
-
+	resultSstrMax, err := genutils.MaxValue(sstr)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(resultSstrMax)
+	}
+	fmt.Println()
+	fmt.Println()
+	fmt.Println("Преобразование:")
+	resultSintMap := genutils.Map(sint, func(n int) string {
+		return fmt.Sprintf("Number: %d", n)
+	})
+	fmt.Println(resultSintMap)
+	resultSstrMap := genutils.Map(sstr, func(n string) int {
+		return len(n)
+	})
+	fmt.Println(resultSstrMap)
 }
